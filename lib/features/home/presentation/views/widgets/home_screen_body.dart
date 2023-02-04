@@ -1,3 +1,4 @@
+import 'package:book_store/core/constants/app_colors.dart';
 import 'package:book_store/core/constants/text_style.dart';
 import 'package:book_store/features/home/presentation/views/widgets/featured_books_listview.dart';
 import 'package:flutter/material.dart';
@@ -27,8 +28,7 @@ class HomeScreenBody extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Text(
             "Best Seller",
-            style: AppTextStyle.textStyle20
-                .copyWith(fontFamily: AppTextStyle.gtSectraFine),
+            style: AppTextStyle.textStyle18.copyWith(color: greenColor),
           ),
         ),
         const SizedBox(
@@ -48,21 +48,45 @@ class BestSellerListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      decoration: BoxDecoration(
+          color: Color(0xFFF1F1F1), borderRadius: BorderRadius.circular(10)),
       height: 120,
-      child: AspectRatio(
-        aspectRatio: 2.6 / 4,
-        child: Container(
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
-              color: Colors.red,
-              image: const DecorationImage(
-                fit: BoxFit.fill,
-                image: AssetImage(
-                  AppAssets.testImage,
-                ),
-              )),
-        ),
+      child: Row(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: AspectRatio(
+              aspectRatio: 2.6 / 4,
+              child: Container(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    image: const DecorationImage(
+                      fit: BoxFit.fill,
+                      image: AssetImage(
+                        AppAssets.testImage,
+                      ),
+                    )),
+              ),
+            ),
+          ),
+          const SizedBox(
+            width: 25,
+          ),
+          Column(
+            children: [
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.5,
+                child: Text("Harry Potter and the Goblet of fire",
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: AppTextStyle.textStyle20.copyWith(
+                        fontFamily: AppTextStyle.gtSectraFine,
+                        color: greenColor)),
+              )
+            ],
+          )
+        ],
       ),
     );
   }
