@@ -33,6 +33,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.1
+  font_awesome_flutter: ^10.3.0
   get: ^4.6.5
   google_fonts: ^4.0.1
 
