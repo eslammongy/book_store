@@ -27,11 +27,12 @@ class HomeScreenBody extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Text(
             "Best Seller",
-            style: AppTextStyle.mediumTitle,
+            style: AppTextStyle.textStyle20
+                .copyWith(fontFamily: AppTextStyle.gtSectraFine),
           ),
         ),
         const SizedBox(
-          height: 30,
+          height: 20,
         ),
         const Padding(
           padding: EdgeInsets.symmetric(horizontal: 24),
