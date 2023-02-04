@@ -15,7 +15,7 @@ class CustomListViewItem extends StatelessWidget {
             image: const DecorationImage(
               fit: BoxFit.fill,
               image: AssetImage(
-                AppAssets.newBookImage,
+                AppAssets.testImage,
               ),
             )),
       ),
