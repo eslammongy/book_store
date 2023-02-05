@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 import '../../../../../core/constants/app_colors.dart';
 import '../../../../../core/constants/text_style.dart';
 import '../../../../../core/utils/assets_manager.dart';
@@ -12,6 +10,7 @@ class BestSellerListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: const EdgeInsets.only(bottom: 10),
       decoration: BoxDecoration(
         color: const Color(0xFFF3F3F3),
         borderRadius: BorderRadius.circular(8),
@@ -61,7 +60,7 @@ class BestSellerListViewItem extends StatelessWidget {
                       style: AppTextStyle.textStyle20.copyWith(
                           fontFamily: AppTextStyle.gtSectraFine,
                           letterSpacing: 1.1,
-                          fontWeight: FontWeight.w700,
+                          fontWeight: FontWeight.w600,
                           color: greenColor)),
                 ),
                 const SizedBox(
