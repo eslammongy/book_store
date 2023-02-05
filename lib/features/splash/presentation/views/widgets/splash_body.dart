@@ -50,7 +50,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
               "E-Booky",
               style: GoogleFonts.righteous(
                   textStyle: TextStyle(
-                      color: darkOrangeColor,
+                      color: orangeColor,
                       fontSize: 45,
                       fontWeight: FontWeight.w700)),
             ),

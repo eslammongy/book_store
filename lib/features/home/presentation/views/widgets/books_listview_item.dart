@@ -21,7 +21,7 @@ class CustomListViewItem extends StatelessWidget {
                 spreadRadius: 1.0,
               ), //BoxShadow
             ],
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(6),
             image: const DecorationImage(
               fit: BoxFit.fill,
               image: AssetImage(
