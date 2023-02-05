@@ -2,7 +2,7 @@ import 'package:book_store/core/utils/assets_manager.dart';
 import 'package:book_store/core/constants/app_colors.dart';
 import 'package:book_store/features/home/presentation/views/home_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -70,9 +70,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   void navigateToHome() {
     Future.delayed(const Duration(seconds: 3), () {
-      Get.to(() => const HomeScreen(),
-          transition: Transition.fadeIn,
-          duration: const Duration(milliseconds: 250));
+      GoRouter.of(context).push('/homeScreen');
     });
   }
 

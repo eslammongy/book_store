@@ -10,40 +10,47 @@ class HomeScreenBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: [
-        SliverToBoxAdapter(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24),
-                  child: CustomAppBar()),
-              const Padding(
-                padding: EdgeInsets.only(
-                  left: 4,
+    return Column(
+      children: [
+        const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 24, vertical: 0),
+            child: CustomAppBar()),
+        Expanded(
+          child: CustomScrollView(
+            slivers: [
+              SliverToBoxAdapter(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Padding(
+                      padding: EdgeInsets.only(
+                        left: 4,
+                      ),
+                      child: FeaturedBooksListView(),
+                    ),
+                    const SizedBox(
+                      height: 50,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 24),
+                      child: Text(
+                        "Best Seller",
+                        style: AppTextStyle.textStyle18
+                            .copyWith(color: greenColor),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                  ],
                 ),
-                child: FeaturedBooksListView(),
               ),
-              const SizedBox(
-                height: 50,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24),
-                child: Text(
-                  "Best Seller",
-                  style: AppTextStyle.textStyle18.copyWith(color: greenColor),
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
+              const SliverFillRemaining(
+                child: BestSellerList(),
+              )
             ],
           ),
         ),
-        const SliverFillRemaining(
-          child: BestSellerList(),
-        )
       ],
     );
   }
