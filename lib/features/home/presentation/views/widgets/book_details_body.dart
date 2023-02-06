@@ -8,6 +8,7 @@ import 'package:book_store/features/home/presentation/views/widgets/featured_boo
 import 'package:flutter/material.dart';
 import 'books_action.dart';
 import 'custome_appbar_details.dart';
+import 'similar_books_listview.dart';
 
 class BooKDetailsBody extends StatelessWidget {
   const BooKDetailsBody({super.key});
@@ -57,9 +58,22 @@ class BooKDetailsBody extends StatelessWidget {
               height: 15,
             ),
             const BookActionsButtons(),
-            Text(
-              "You Can also like",
-              style: AppTextStyle.textStyle18.copyWith(color: greenColor),
+            const SizedBox(
+              height: 40,
+            ),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                "You Can also like",
+                style: AppTextStyle.textStyle18.copyWith(color: greenColor),
+              ),
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            const SimilarBooksListView(),
+            const SizedBox(
+              height: 40,
             ),
           ],
         ),
