@@ -1,10 +1,12 @@
 import 'package:book_store/core/constants/app_colors.dart';
 import 'package:book_store/core/constants/text_style.dart';
+import 'package:book_store/core/widgets/custom_button.dart';
 import 'package:book_store/features/home/presentation/views/book_details.dart';
 import 'package:book_store/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:book_store/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:book_store/features/home/presentation/views/widgets/featured_books_listview.dart';
 import 'package:flutter/material.dart';
+import 'books_action.dart';
 import 'custome_appbar_details.dart';
 
 class BooKDetailsBody extends StatelessWidget {
@@ -23,11 +25,11 @@ class BooKDetailsBody extends StatelessWidget {
               height: 20,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.18),
+              padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.20),
               child: const CustomBookImage(),
             ),
             const SizedBox(
-              height: 40,
+              height: 30,
             ),
             Text("System Design Interview",
                 style: AppTextStyle.textStyle30.copyWith(
@@ -50,7 +52,15 @@ class BooKDetailsBody extends StatelessWidget {
             ),
             const BookRatingRow(
               mainAxisAlignment: MainAxisAlignment.center,
-            )
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            const BookActionsButtons(),
+            Text(
+              "You Can also like",
+              style: AppTextStyle.textStyle18.copyWith(color: greenColor),
+            ),
           ],
         ),
       ),
