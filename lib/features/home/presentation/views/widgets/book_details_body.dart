@@ -16,68 +16,79 @@ class BooKDetailsBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var screenWidth = MediaQuery.of(context).size.width;
-    return SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 30),
-        child: Column(
-          children: [
-            const CustomDetailsAppBar(),
-            const SizedBox(
-              height: 20,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.20),
-              child: const CustomBookImage(),
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            Text("System Design Interview",
-                style: AppTextStyle.textStyle30.copyWith(
-                  color: greenColor,
-                  fontWeight: FontWeight.w700,
-                )),
-            const SizedBox(
-              height: 6,
-            ),
-            Opacity(
-              opacity: 0.7,
-              child: Text("Alex xue & Sahn lam",
-                  style: AppTextStyle.textStyle18.copyWith(
-                      color: greenColor,
-                      fontWeight: FontWeight.w500,
-                      fontStyle: FontStyle.italic)),
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            const BookRatingRow(
-              mainAxisAlignment: MainAxisAlignment.center,
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            const BookActionsButtons(),
-            const SizedBox(
-              height: 40,
-            ),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                "You Can also like",
-                style: AppTextStyle.textStyle18.copyWith(color: greenColor),
+    return CustomScrollView(
+      slivers: [
+        SliverFillRemaining(
+          hasScrollBody: false,
+          child: SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: Column(
+                children: [
+                  const CustomDetailsAppBar(),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Padding(
+                    padding:
+                        EdgeInsets.symmetric(horizontal: screenWidth * 0.20),
+                    child: const CustomBookImage(),
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Text("System Design Interview",
+                      style: AppTextStyle.textStyle30.copyWith(
+                        color: greenColor,
+                        fontWeight: FontWeight.w700,
+                      )),
+                  const SizedBox(
+                    height: 6,
+                  ),
+                  Opacity(
+                    opacity: 0.7,
+                    child: Text("Alex xue & Sahn lam",
+                        style: AppTextStyle.textStyle18.copyWith(
+                            color: greenColor,
+                            fontWeight: FontWeight.w500,
+                            fontStyle: FontStyle.italic)),
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  const BookRatingRow(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  const BookActionsButtons(),
+                  const Expanded(
+                    child: SizedBox(
+                      height: 40,
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "You Can also like",
+                      style:
+                          AppTextStyle.textStyle18.copyWith(color: greenColor),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  const SimilarBooksListView(),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                ],
               ),
             ),
-            const SizedBox(
-              height: 15,
-            ),
-            const SimilarBooksListView(),
-            const SizedBox(
-              height: 40,
-            ),
-          ],
-        ),
-      ),
+          ),
+        )
+      ],
     );
   }
 }
