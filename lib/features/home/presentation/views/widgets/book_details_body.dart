@@ -45,7 +45,12 @@ class BooKDetailsBody extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                       fontStyle: FontStyle.italic)),
             ),
-            BookRatingRow()
+            const SizedBox(
+              height: 15,
+            ),
+            const BookRatingRow(
+              mainAxisAlignment: MainAxisAlignment.center,
+            )
           ],
         ),
       ),

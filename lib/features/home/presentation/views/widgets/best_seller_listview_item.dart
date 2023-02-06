@@ -56,6 +56,7 @@ class BestSellerListViewItem extends StatelessWidget {
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.5,
@@ -71,17 +72,20 @@ class BestSellerListViewItem extends StatelessWidget {
                   const SizedBox(
                     height: 5,
                   ),
-                  Text("J.K. Rowling",
-                      style: AppTextStyle.textStyle14.copyWith(
-                          color: greyColor, fontWeight: FontWeight.w500)),
+                  Opacity(
+                    opacity: 0.65,
+                    child: Text("J.K. Rowling",
+                        style: AppTextStyle.textStyle14.copyWith(
+                            color: greenColor, fontWeight: FontWeight.w500)),
+                  ),
                   const SizedBox(
-                    height: 5,
+                    height: 8,
                   ),
                   Row(
                     children: [
                       Text("19.99 \$",
                           style: AppTextStyle.textStyle20.copyWith(
-                              color: greenColor, fontWeight: FontWeight.bold)),
+                              color: greenColor, fontWeight: FontWeight.w900)),
                       const Spacer(),
                       const BookRatingRow(),
                     ],
