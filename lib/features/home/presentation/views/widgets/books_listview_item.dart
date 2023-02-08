@@ -5,8 +5,8 @@ import '../../../../../core/constants/text_style.dart';
 import '../../../../../core/utils/assets_manager.dart';
 import 'book_rating.dart';
 
-class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key});
+class BooksListViewItem extends StatelessWidget {
+  const BooksListViewItem({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +26,8 @@ class BestSellerListViewItem extends StatelessWidget {
                 1.0,
                 1.0,
               ),
-              blurRadius: 8.0,
-              spreadRadius: 1.0,
+              blurRadius: 6.0,
+              spreadRadius: -1,
             ), //BoxShadow
           ],
         ),
