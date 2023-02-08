@@ -1,5 +1,6 @@
 import 'package:book_store/features/home/presentation/views/book_details.dart';
 import 'package:book_store/features/home/presentation/views/home_screen.dart';
+import 'package:book_store/features/search/presentation/views/search_view.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../features/splash/presentation/views/splash_screen.dart';
@@ -13,6 +14,10 @@ abstract class AppRouter {
     GoRoute(
       path: '/homeScreen',
       builder: (context, state) => const HomeScreen(),
+    ),
+    GoRoute(
+      path: '/searchScreen',
+      builder: (context, state) => const SearchView(),
     ),
     GoRoute(
       path: '/bookDetails',
