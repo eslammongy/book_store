@@ -1,5 +1,6 @@
 // ignore: file_names
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 import '../../../../core/errors/failure.dart';
 import '../../../../core/utils/api_services.dart';
 import '../models/book_model/book_model.dart';
@@ -19,8 +20,11 @@ class HomeRepoImpl implements HomeRepo {
         books.add(item);
       }
       return right(books);
-    } catch (e) {
-      return left(ServerError());
+    } catch (error) {
+      if (error is DioError) {
+        return left(ServerError.fromDioError(error));
+      }
+      return left(ServerError(errorMsg: error.toString()));
     }
   }
 
