@@ -1,5 +1,6 @@
 import 'package:book_store/core/constants/app_colors.dart';
 import 'package:book_store/core/constants/text_style.dart';
+import 'package:book_store/core/utils/assets_manager.dart';
 import 'package:book_store/core/widgets/custom_button.dart';
 import 'package:book_store/features/home/presentation/views/book_details.dart';
 import 'package:book_store/features/home/presentation/views/widgets/book_rating.dart';
@@ -32,7 +33,9 @@ class BooKDetailsBody extends StatelessWidget {
                   Padding(
                     padding:
                         EdgeInsets.symmetric(horizontal: screenWidth * 0.20),
-                    child: const CustomBookImage(),
+                    child: const CustomBookImage(
+                      imageUrl: AppAssets.testImage,
+                    ),
                   ),
                   const SizedBox(
                     height: 30,
