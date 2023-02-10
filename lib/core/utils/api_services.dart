@@ -7,11 +7,8 @@ class ApiServices {
 
   ApiServices(this._dio);
 
-  Future<Map<String, dynamic>> getBooksList(
-      {required String sorting, required String subject}) async {
-    var response = await _dio
-        .get("${_baseUrl}volumes?Filtering=free-ebooks&q=subject:Programming");
-
+  Future<Map<String, dynamic>> getBooksList({required String endPoint}) async {
+    var response = await _dio.get("$_baseUrl$endPoint");
     return response.data;
   }
 }

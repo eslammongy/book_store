@@ -47,8 +47,9 @@ class HomeScreenBody extends StatelessWidget {
                 ),
               ),
               const SliverFillRemaining(
+                hasScrollBody: true,
                 child: BestSellerList(),
-              )
+              ),
             ],
           ),
         ),
