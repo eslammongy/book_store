@@ -1,6 +1,7 @@
 // ignore: file_names
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import '../../../../core/errors/failure.dart';
 import '../../../../core/utils/api_services.dart';
 import '../models/book_model/book_model.dart';
@@ -14,7 +15,7 @@ class HomeRepoImpl implements HomeRepo {
     try {
       var result = await apiServices.getBooksList(
           endPoint:
-              "volumes?Filtering=free-ebooks&Sorting=newest&q=subject:computer science");
+              "volumes?Filtering=free-ebooks&Sorting=newest&q=computer science");
 
       List<BookModel> books = [];
       for (var item in result['items']) {
@@ -34,6 +35,27 @@ class HomeRepoImpl implements HomeRepo {
     try {
       var result = await apiServices.getBooksList(
           endPoint: "volumes?Filtering=free-ebooks&q=Programming");
+
+      List<BookModel> books = [];
+      for (var item in result['items']) {
+        books.add(BookModel.fromJson(item));
+      }
+      return right(books);
+    } catch (error) {
+      if (error is DioError) {
+        return left(ServerError.fromDioError(error));
+      }
+      return left(ServerError(errorMsg: error.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<BookModel>>> fetchSimilarBooks(
+      {required String category}) async {
+    try {
+      var result = await apiServices.getBooksList(
+          endPoint:
+              "volumes?Filtering=free-ebooks&Sorting=relevance&q=$category");
 
       List<BookModel> books = [];
       for (var item in result['items']) {
