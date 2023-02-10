@@ -30,7 +30,7 @@ class HomeScreenBody extends StatelessWidget {
                       child: FeaturedBooksListView(),
                     ),
                     const SizedBox(
-                      height: 50,
+                      height: 30,
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 24),

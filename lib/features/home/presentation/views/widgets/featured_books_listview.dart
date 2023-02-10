@@ -26,8 +26,9 @@ class FeaturedBooksListView extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 8.0, vertical: 10),
                   child: CustomBookImage(
-                    imageUrl:
-                        state.books[index].volumeInfo.imageLinks!.thumbnail,
+                    imageUrl: state
+                            .books[index].volumeInfo.imageLinks?.thumbnail ??
+                        "https://img.icons8.com/pastel-glyph/64/null/error-globe.png",
                   ),
                 );
               },

@@ -17,6 +17,7 @@ class BooksListViewItem extends StatelessWidget {
         GoRouter.of(context).push('/bookDetails');
       },
       child: Container(
+        margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 24),
         decoration: BoxDecoration(
           color: const Color(0xFFF3F3F3),
           borderRadius: BorderRadius.circular(8),
@@ -38,7 +39,8 @@ class BooksListViewItem extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: CustomBookImage(
-                  imageUrl: bookModel.volumeInfo.imageLinks!.thumbnail),
+                  imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ??
+                      "https://img.icons8.com/pastel-glyph/64/null/error-globe.png"),
             ),
             const SizedBox(
               width: 25,
