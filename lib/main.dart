@@ -24,7 +24,8 @@ class BookStore extends StatelessWidget {
             create: (context) => FeaturedCubitBloc(getIt.get<HomeRepoImpl>())
               ..fetchFeaturedBooks()),
         BlocProvider(
-            create: (context) => NewestBooksCubit(getIt.get<HomeRepoImpl>())),
+            create: (context) => NewestBooksCubit(getIt.get<HomeRepoImpl>())
+              ..fetchNewestBooks()),
       ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,

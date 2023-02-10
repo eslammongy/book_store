@@ -17,6 +17,7 @@ class HomeScreenBody extends StatelessWidget {
             child: CustomAppBar()),
         Expanded(
           child: CustomScrollView(
+            physics: const BouncingScrollPhysics(),
             slivers: [
               SliverToBoxAdapter(
                 child: Column(
@@ -34,7 +35,7 @@ class HomeScreenBody extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 24),
                       child: Text(
-                        "Best Seller",
+                        "Newest Books",
                         style: AppTextStyle.textStyle18
                             .copyWith(color: greenColor),
                       ),

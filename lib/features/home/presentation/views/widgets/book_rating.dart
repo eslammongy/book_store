@@ -7,8 +7,13 @@ import '../../../../../core/constants/text_style.dart';
 
 class BookRatingRow extends StatelessWidget {
   const BookRatingRow(
-      {super.key, this.mainAxisAlignment = MainAxisAlignment.start});
+      {super.key,
+      this.mainAxisAlignment = MainAxisAlignment.start,
+      required this.rating,
+      required this.count});
   final MainAxisAlignment mainAxisAlignment;
+  final num rating;
+  final int count;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -23,7 +28,7 @@ class BookRatingRow extends StatelessWidget {
           width: 6,
         ),
         Text(
-          "4.8",
+          "$rating",
           style: AppTextStyle.textStyle16
               .copyWith(fontWeight: FontWeight.w600, color: greenColor),
         ),
@@ -33,7 +38,7 @@ class BookRatingRow extends StatelessWidget {
         Opacity(
           opacity: 0.6,
           child: Text(
-            "(2845)",
+            "($count)",
             style: AppTextStyle.textStyle16
                 .copyWith(color: greenColor, fontWeight: FontWeight.w600),
           ),
