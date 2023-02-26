@@ -52,7 +52,8 @@ class SimilarBooksListView extends StatelessWidget {
                         const EdgeInsets.symmetric(horizontal: 5, vertical: 8),
                     child: CustomBookImage(
                       imageUrl:
-                          "${state.books[index].volumeInfo.imageLinks?.thumbnail}",
+                          state.books[index].volumeInfo.imageLinks?.thumbnail ??
+                              " ",
                     ),
                   ),
                 );

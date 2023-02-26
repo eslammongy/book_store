@@ -41,24 +41,37 @@ class _SplashViewBodyState extends State<SplashViewBody>
           children: [
             Image.asset(
               AppAssets.logoImage,
-              width: 200,
+              width: 120,
             ),
             const SizedBox(
-              height: 15,
+              height: 5,
             ),
-            Text(
-              "E-Booky",
-              style: GoogleFonts.righteous(
-                  textStyle: TextStyle(
-                      color: orangeColor,
-                      fontSize: 45,
-                      fontWeight: FontWeight.w700)),
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  "E-",
+                  style: GoogleFonts.righteous(
+                      textStyle: TextStyle(
+                          color: orangeColor,
+                          fontSize: 45,
+                          fontWeight: FontWeight.w700)),
+                ),
+                Text(
+                  "Booky",
+                  style: GoogleFonts.righteous(
+                      textStyle: TextStyle(
+                          color: greenColor,
+                          fontSize: 45,
+                          fontWeight: FontWeight.w700)),
+                ),
+              ],
             ),
             Text(
               "Read more free books...",
               style: GoogleFonts.roboto(
-                  textStyle: const TextStyle(
-                      color: Color(0xC2453B5E),
+                  textStyle: TextStyle(
+                      color: greyColor,
                       fontWeight: FontWeight.w500,
                       fontSize: 15)),
             )
@@ -70,7 +83,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   void navigateToHome() {
     Future.delayed(const Duration(seconds: 3), () {
-      GoRouter.of(context).push('/homeScreen');
+      GoRouter.of(context).pushReplacement('/homeScreen');
     });
   }
 

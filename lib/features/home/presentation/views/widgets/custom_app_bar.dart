@@ -1,3 +1,4 @@
+import 'package:book_store/core/utils/assets_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
@@ -14,13 +15,9 @@ class CustomAppBar extends StatelessWidget {
       padding: const EdgeInsets.only(top: 40.0, bottom: 10),
       child: Row(
         children: [
-          Text(
-            "E-Booky",
-            style: GoogleFonts.righteous(
-                textStyle: TextStyle(
-                    color: orangeColor,
-                    fontSize: 25,
-                    fontWeight: FontWeight.w700)),
+          Image.asset(
+            "${AppAssets.logoImage}",
+            width: 40,
           ),
           const Spacer(),
           IconButton(
