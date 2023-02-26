@@ -5,6 +5,7 @@ import 'package:book_store/features/home/presentation/view_models/featured_cubit
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'custom_book_image.dart';
 
 class FeaturedBooksListView extends StatelessWidget {
@@ -20,15 +21,21 @@ class FeaturedBooksListView extends StatelessWidget {
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               physics: const BouncingScrollPhysics(),
-              itemCount: 10,
+              itemCount: state.books.length,
               itemBuilder: (context, index) {
-                return Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 8.0, vertical: 10),
-                  child: CustomBookImage(
-                    imageUrl: state
-                            .books[index].volumeInfo.imageLinks?.thumbnail ??
-                        "https://img.icons8.com/pastel-glyph/64/null/error-globe.png",
+                return GestureDetector(
+                  onTap: () {
+                    GoRouter.of(context)
+                        .push('/bookDetails', extra: state.books[index]);
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 8.0, vertical: 10),
+                    child: CustomBookImage(
+                      imageUrl: state
+                              .books[index].volumeInfo.imageLinks?.thumbnail ??
+                          "https://img.icons8.com/pastel-glyph/64/null/error-globe.png",
+                    ),
                   ),
                 );
               },
