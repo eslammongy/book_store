@@ -34,7 +34,7 @@ class BooKDetailsBody extends StatelessWidget {
                     padding:
                         EdgeInsets.symmetric(horizontal: screenWidth * 0.20),
                     child: const CustomBookImage(
-                      imageUrl: AppAssets.testImage,
+                      imageUrl: "https://img.freepik.com/premium-psd/book-cover-mockup_125540-572.jpg",
                     ),
                   ),
                   const SizedBox(

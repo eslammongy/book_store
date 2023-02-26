@@ -23,7 +23,7 @@ class SimilarBooksListView extends StatelessWidget {
                 return const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 5, vertical: 8),
                   child: CustomBookImage(
-                    imageUrl: AppAssets.testImage,
+                    imageUrl: "https://img.freepik.com/premium-psd/book-cover-mockup_125540-572.jpg",
                   ),
                 );
               },
