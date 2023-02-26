@@ -51,7 +51,7 @@ class CustomBookDetailsSection extends StatelessWidget {
         ),
         Opacity(
           opacity: 0.7,
-          child: Text(bookModel.volumeInfo.authors![0],
+          child: Text(bookModel.volumeInfo.authors?[0] ?? "",
               style: AppTextStyle.textStyle18.copyWith(
                   color: greenColor,
                   fontWeight: FontWeight.w500,
@@ -68,7 +68,9 @@ class CustomBookDetailsSection extends StatelessWidget {
         const SizedBox(
           height: 15,
         ),
-        const BookActionsButtons(),
+        BookActionsButtons(
+          bookModel: bookModel,
+        ),
       ],
     );
   }

@@ -66,7 +66,7 @@ class BooksListViewItem extends StatelessWidget {
                   ),
                   Opacity(
                     opacity: 0.65,
-                    child: Text(bookModel.volumeInfo.authors![0],
+                    child: Text(bookModel.volumeInfo.authors?[0] ?? " ",
                         style: AppTextStyle.textStyle14.copyWith(
                             color: greenColor, fontWeight: FontWeight.w500)),
                   ),

@@ -4,6 +4,7 @@ import 'package:book_store/features/home/data/repos/home%20_repo_impl.dart';
 import 'package:book_store/features/home/presentation/view_models/similar_books/similar_books_cubit.dart';
 import 'package:book_store/features/home/presentation/views/book_details.dart';
 import 'package:book_store/features/home/presentation/views/home_screen.dart';
+import 'package:book_store/features/search/presentation/view_models/search_cubit.dart';
 import 'package:book_store/features/search/presentation/views/search_view.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -22,7 +23,10 @@ abstract class AppRouter {
     ),
     GoRoute(
       path: '/searchScreen',
-      builder: (context, state) => const SearchView(),
+      builder: (context, state) => BlocProvider(
+        create: (context) => SearchCubit(getIt.get<HomeRepoImpl>()),
+        child: const SearchView(),
+      ),
     ),
     GoRoute(
       path: '/bookDetails',
